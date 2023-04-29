@@ -2,7 +2,7 @@ from random import *
 
 def roulette_wheel_selection(population, fitness_values, population_size):
     fitness_sum = sum(fitness_values)
-    fitness_probs = [ (fitness / fitness_sum) for fitness in fitness_values ]
+    fitness_probs = [(fitness / fitness_sum) for fitness in fitness_values]
     wheel_position = uniform(0, 1)
     comulative_prob = 0
 
