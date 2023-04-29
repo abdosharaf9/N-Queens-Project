@@ -73,7 +73,7 @@ def three_parent_crossover(chromosome1, chromosome2, size):
 
 
 # -----------------------------------------------------------------------------------
-
+'''
 chromosome1 = [1, 1, 0, 1, 0, 1, 1, 1]
 chromosome2 = [0, 1, 0, 0, 1, 0, 0, 1]
 print(f"chromosome1 = {chromosome1}\nchromosome2 = {chromosome2}\n")
@@ -112,3 +112,4 @@ print(f"Child1 = {child1}\nChild2 = {child2}\n")
 print(f"Three parent:-")
 child = three_parent_crossover(chromosome1, chromosome2, 8)
 print(f"Child = {child}")
+'''
