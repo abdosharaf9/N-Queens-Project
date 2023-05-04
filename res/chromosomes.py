@@ -8,7 +8,7 @@ def generate_chromosome(size):
 
 
 
-def generate_population(population_size, chromosome_size, mutation_probability, old_population, fitness_values, max_fitness):
+def generate_population(population_size, chromosome_size, mutation_probability, old_population, fitness_values):
     new_population = []
     
     for _ in range(int(population_size/2)):

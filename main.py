@@ -30,12 +30,12 @@ if __name__ == "__main__":
             fittest_found = population[fitness_values.index(max(fitness_values))]
             generation = 0
 
-            # while max_fitness not in fitness_values:
-            while generation != GENERATIONS_NUMBER and max_fitness not in fitness_values:
-                population = generate_population(POPULATION_SIZE, n, MUTATION_PROBABILITY, population, fitness_values, max_fitness)
+            # while max_fitness != fitness(fittest_found, max_fitness):
+            while generation != GENERATIONS_NUMBER and max_fitness != fitness(fittest_found, max_fitness):
+                population = generate_population(POPULATION_SIZE, n, MUTATION_PROBABILITY, population, fitness_values)
                 fitness_values = [fitness(chromosome, max_fitness) for chromosome in population]
                 current_fittest = population[fitness_values.index(max(fitness_values))]
-                if current_fittest > fittest_found:
+                if fitness(current_fittest, max_fitness) > fitness(fittest_found, max_fitness):
                     fittest_found = current_fittest
                 generation += 1
 
