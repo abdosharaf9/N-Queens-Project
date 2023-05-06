@@ -176,7 +176,16 @@ def random_reset_mutation(chromosome, size):
 
 
 # Screenshots:-
-
+<table style="padding: 10px;">
+    <tr>
+        <td><img src="https://github.com/abdosharaf9/N-Queens-Project/blob/master/screenshots/input%20screen.png"></td>
+        <td><img src="https://github.com/abdosharaf9/N-Queens-Project/blob/master/screenshots/solution%20found.png"></td>
+    </tr>
+    <tr>
+        <td><img src="https://github.com/abdosharaf9/N-Queens-Project/blob/master/screenshots/no%20solution.png"></td>
+        <td><img src="https://github.com/abdosharaf9/N-Queens-Project/blob/master/screenshots/can't%20solve.png"></td>
+    </tr>
+</table>
 
 
 ---
