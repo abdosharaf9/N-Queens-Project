@@ -21,16 +21,16 @@ In this project we used the <b>Genetic Algorithms</b> search technique to solve 
         <th>Technique</th>
     </tr>
     <tr>
-        <td>Parent selection</td>
-        <td>Roulette Wheel</td>
+        <td><a href="https://github.com/abdosharaf9/N-Queens-Project#parent-selection-">Parent selection</a></td>
+        <td><a href="https://github.com/abdosharaf9/N-Queens-Project#roulette-wheel-selection">Roulette Wheel Selection</a></td>
     </tr>
     <tr>
-        <td>Crossover</td>
-        <td>Two Point Crossover</td>
+        <td><a href="https://github.com/abdosharaf9/N-Queens-Project#crossover-">Crossover</a></td>
+        <td><a href="https://github.com/abdosharaf9/N-Queens-Project#two-point-crossover">Two Point Crossover</a></td>
     </tr>
     <tr>
-        <td>Mutation</td>
-        <td>Random Reset Mutation</td>
+        <td><a href="https://github.com/abdosharaf9/N-Queens-Project#mutation-">Mutation</a></td>
+        <td><a href="https://github.com/abdosharaf9/N-Queens-Project#random-resetting-mutation">Random Reset Mutation</a></td>
     </tr>
 </table>
 
@@ -43,11 +43,11 @@ In this project we used the <b>Genetic Algorithms</b> search technique to solve 
         <th>Usage</th>
     </tr>
     <tr>
-        <td>Turtle</td>
+        <td><a href="https://docs.python.org/3/library/turtle.html">Turtle</a></td>
         <td>Drawing the GUI of the program, which is used to take the input <b>(N)</b>, or to show the algorithm output.</td>
     </tr>
     <tr>
-        <td>Random</td>
+        <td><a href="https://docs.python.org/3/library/random.html">Random</a></td>
         <td>Generate random numbers or lists, which is a very important thing in <b>Genetic Algorithms</b></td>
     </tr>
 </table>
@@ -74,7 +74,7 @@ In this project we used the <b>Genetic Algorithms</b> search technique to solve 
 ---
 
 
-## Parent selection:
+## Parent selection:-
 Parent selection is a term used in Genetic Algorithms that refers to the process of selecting individuals from the current population to be used in generating the offspring for the next generation. The aim of parent selection is to increase the probability of producing better offspring in the next generation. There are several methods of parent selection in Genetic Algorithms, including Roulette Wheel Selection, Tournament Selection, Rank Selection, and others.
 
 - The choice of parent selection method depends on the problem being solved, as well as the characteristics 
