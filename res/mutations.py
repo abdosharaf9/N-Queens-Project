@@ -22,7 +22,7 @@ def divide_mutation(chromosome, size):
     return chromosome
 
 
-def replace_mutation(chromosome, size):
+def random_reset_mutation(chromosome, size):
     index = randint(0, size-1)
     # print(f"Index = {index}")
     chromosome[index] = randint(1, size)

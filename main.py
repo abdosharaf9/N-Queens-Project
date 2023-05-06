@@ -7,7 +7,6 @@ MUTATION_PROBABILITY = 0.05
 GENERATIONS_NUMBER = 1000
 
 
-#Main Screen
 win = Screen()
 win.title("N-Queen Problem")
 win.bgcolor("#dfe6dc")

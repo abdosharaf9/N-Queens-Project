@@ -11,11 +11,9 @@ def one_point_crossover(chromosome1, chromosome2, size):
 
 
 def two_point_crossover(chromosome1, chromosome2, size):
-    point1 = randint(1, size-2)
-    point2 = randint(1, size-2)
-
-    while(point2 == point1): point2 = randint(1, size-2)
-    if(point1 > point2): point1, point2 = point2, point1
+    points = sorted(sample(range(1, size), 2))
+    point1 = points[0]
+    point2 = points[1]
     # print(f"Point1 = {point1}, Point2 = {point2}")
 
     child1 = chromosome1[:point1] + chromosome2[point1:point2] + chromosome1[point2:]
@@ -26,7 +24,7 @@ def two_point_crossover(chromosome1, chromosome2, size):
 
 def multi_point_crossover(chromosome1, chromosome2, size):
     num_of_points = randint(1, size-2)
-    points = sorted(sample(range(size), num_of_points))
+    points = sorted(sample(range(1, size), num_of_points))
     # print(f"Number of points = {num_of_points}, Points = {points}")
     child1 = chromosome1.copy()
     child2 = chromosome2.copy()
