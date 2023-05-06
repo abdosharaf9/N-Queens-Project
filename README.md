@@ -222,6 +222,9 @@ python {project path}\main.py
 
 Or, you can run it with any IDE that supports Python language like [VS Code](https://code.visualstudio.com).
 
+<br>
+
+You can also download an executable file (.exe) and open it to test the program using [this link](https://github.com/abdosharaf9/N-Queens-Project/blob/master/N-Queens.exe), then click the download icon.
 
 
 ---
