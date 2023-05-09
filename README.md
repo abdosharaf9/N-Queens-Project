@@ -55,10 +55,52 @@ In this project we used the <b>Genetic Algorithms</b> search technique to solve 
 
 ---
 
+## Project structure:-
+### crossovers.py
+In this file we implemented some of crossover techniques, such as Single/One-Point Crossover, Two-Point Crossover, Multi-Point Crossover, Uniform Crossover, and Three Parent Crossover.
+
+### mutations.py
+This file contains Bit Flip and Random Reset mutation techniques.
+
+### parent_selection.py
+For now, this file just contains Roulette Wheel Selection as it is the used technique for parent selection.
+
+### chromosomes.py
+Here we have 2 methods:
+- `generate_chromosome()` : used to generate a random chromosome with the desired chromosome size.
+- `generate_population()` : used to generate new population out of the old one by:
+    * select the parents using a selection method.
+    * make crossover between those parents to get new childs.
+    * mutate the childs according to the <b>Mutation Probability</b>.
+    * add the childs to the new population.
+    * repeat these steps until we reach the desired population size.
+
+
+### final_UI.py
+This file contains all the Turtle work to visualize the output.
+
+<br>
+
+<pre>
+|
+|__ res
+|   |__ chromosomes.py
+|   |__ crossovers.py
+|   |__ mutations.py
+|   |__ parent_selection.py
+|
+|__ ui
+|   |__ final_UI.py
+|
+|__ main.py
+</pre>
+
+---
+
 
 ## How the algorithm works?
 1. Take number of queens <b>(N)</b> from the user.
-2. Calculate the max fitness we can reach, which equals (N * (N-1)) / 2.
+2. Calculate the max fitness we can reach, which equals <b>(N * (N-1)) / 2</b>.
 3. Create the initial population and evaluate the fitness function for each chromosome.
 4. Save the fittest chromosome (to display it if there is no solution).
 5. Iterate 1000 iterations or until we find a solution (Because this algorithm may go in an infinite loop):
