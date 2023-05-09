@@ -57,16 +57,28 @@ In this project we used the <b>Genetic Algorithms</b> search technique to solve 
 ---
 
 ## Project structure:-
-### crossovers.py
+
+### [final_UI.py](ui/final_UI.py)
+This file contains all the Turtle work to visualize the output.
+
+<br>
+
+### [crossovers.py](res/crossovers.py)
 In this file we implemented some of crossover techniques, such as Single/One-Point Crossover, Two-Point Crossover, Multi-Point Crossover, Uniform Crossover, and Three Parent Crossover.
 
-### mutations.py
+<br>
+
+### [mutations.py](res/mutations.py)
 This file contains Bit Flip and Random Reset mutation techniques.
 
-### parent_selection.py
+<br>
+
+### [parent_selection.py](res/parent_selection.py)
 For now, this file just contains Roulette Wheel Selection as it is the used technique for parent selection.
 
-### chromosomes.py
+<br>
+
+### [chromosomes.py](res/chromosomes.py)
 Here we have 2 methods:
 - `generate_chromosome()` : used to generate a random chromosome with the desired chromosome size.
 - `generate_population()` : used to generate new population out of the old one by:
@@ -75,10 +87,6 @@ Here we have 2 methods:
     * mutate the childs according to the <b>Mutation Probability</b>.
     * add the childs to the new population.
     * repeat these steps until we reach the desired population size.
-
-
-### final_UI.py
-This file contains all the Turtle work to visualize the output.
 
 <br>
 
@@ -94,6 +102,7 @@ This file contains all the Turtle work to visualize the output.
 |   |__ final_UI.py
 |
 |__ main.py
+|__ N-Queens.exe
 </pre>
 
 ---
