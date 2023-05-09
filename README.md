@@ -122,6 +122,9 @@ Here we have 2 methods:
     - compare the current best chromosome with the saved fittest one, and save it if it fits more.
 6. If there is a solution found we display it. If there is no solution found we display the fittest found one.
 
+<br>
+
+The chromosome in this project is a list of integers, where the index represents the row number, and the value represents the column number. The chromosome size will be same as the number of queens <b>N</b>, which will be taken from the user. This is because in the program start we still don't know the board size.
 
 ---
 
