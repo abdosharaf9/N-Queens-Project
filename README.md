@@ -1,4 +1,5 @@
 # N-Queens-Project
+> Special Thanks to [@ZiadWael22](https://github.com/ZiadWael22) for his UI work ❤️.
 
 ## N-Queens Problem:-
 The N-Queens problem is a classic problem in computer science and mathematics that involves placing N chess queens on an N×N chessboard so that no two queens attack each other. In other words, no two queens share the same row, column, or diagonal.
