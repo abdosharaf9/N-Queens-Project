@@ -1,7 +1,9 @@
 from turtle import *
 
-#Draw Board Cell
-def cell(n,x,y,fill_color):
+def cell(n: int, x: float, y: float, fill_color: str):
+    """
+    Draw board cell.
+    """
     celltu=Turtle()
     celltu.hideturtle()
     celltu.up()
@@ -9,13 +11,16 @@ def cell(n,x,y,fill_color):
     celltu.down()
     celltu.begin_fill()
     celltu.fillcolor(fill_color)
-    for i in range (4):
+    for _ in range (4):
         celltu.fd(400/n)
         celltu.rt(90)
     celltu.end_fill()
 
-#Draw Board
-def board(n):
+
+def board(n: int):
+    """
+    Draw the board.
+    """
     x=100
     y=450
     for i in range (n):
@@ -28,8 +33,11 @@ def board(n):
         x=100
         y-=400/n 
 
-#Queens
-def queen(col,row,n):
+
+def queen(col: int, row: int, n: int):
+    """
+    Draw the queen in its cell.
+    """
     q=Turtle()
     q.hideturtle()
     q.up()
@@ -39,9 +47,11 @@ def queen(col,row,n):
     q.color("#1f1f1f")
     q.write("♛",align="center",font=("Arial",int((400/n)*0.6),"bold"))
 
-#Input Screen
-def sc1(win):
-    #Input N Of Queens
+
+def sc1(win) -> int:
+    """
+    Input Screen that takes number of queens (n) from the user
+    """
     tu=Turtle()
     tu.up()
     tu.hideturtle()
@@ -53,9 +63,10 @@ def sc1(win):
     return int(n)
 
 
-#Excution Screen
-def sc2(n,chromosome):
-    #Number Of Attempts
+def sc2(n: int, chromosome: list[int]):
+    """
+    Draw the queens in the chromosome.
+    """
     tu=Turtle()
     tu.up()
     tu.hideturtle()
@@ -64,9 +75,11 @@ def sc2(n,chromosome):
     for i in range(len(chromosome)):
         queen(i+1,chromosome[i],n)
 
-#Excution Screen Text If Solution Found
-def sc2_solution(gens):
-    #Number Of Attempts
+
+def sc2_solution(gens: int):
+    """
+    Write the text if the solution is found, it shows the solution's generation.
+    """
     tu=Turtle()
     tu.up()
     tu.hideturtle()
@@ -77,9 +90,12 @@ def sc2_solution(gens):
     tu.color("#1f1f1f")
     tu.write(f"Found In Generation: {gens}",align="center",font=("Arial","22","bold"))
 
-#Excution Screen Text If Limit Reached
-def sc2_limit(gens,fit):
-    #Number Of Attempts
+
+def sc2_limit(gens: int, fitness: int):
+    """
+    Write the text if the is no solution found and exceed the generations limit, it shows the fitness of the fittest
+    found chromosome and the number of attempts.
+    """
     tu=Turtle()
     tu.up()
     tu.hideturtle()
@@ -88,10 +104,13 @@ def sc2_limit(gens,fit):
     tu.write("Limit Reached!",align="center",font=("Arial","30","bold"))
     tu.goto(300,475)
     tu.color("#1f1f1f")
-    tu.write(f"Fittest: {fit}   -   Attempts: {gens}",align="center",font=("Arial","22","bold"))
+    tu.write(f"Fittest: {fitness}   -   Attempts: {gens}",align="center",font=("Arial","22","bold"))
 
 
-def no_solution(n):
+def no_solution(n: int):
+    """
+    Write the text if the is the problem can't be solved.
+    """
     tu=Turtle()
     tu.up()
     tu.hideturtle()

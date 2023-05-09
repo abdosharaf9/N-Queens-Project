@@ -1,6 +1,9 @@
 from random import *
 
-def one_point_crossover(chromosome1, chromosome2, size):
+def one_point_crossover(chromosome1: list[int], chromosome2: list[int], size: int) -> tuple[list[int], list[int]]:
+    """
+    Choose a random cut point and swap the parents' portion after the cut point.
+    """
     point = randint(1, size-2)
     # print(f"Point = {point}")
 
@@ -10,7 +13,10 @@ def one_point_crossover(chromosome1, chromosome2, size):
     return child1, child2
 
 
-def two_point_crossover(chromosome1, chromosome2, size):
+def two_point_crossover(chromosome1: list[int], chromosome2: list[int], size: int) -> tuple[list[int], list[int]]:
+    """
+    Choose 2 random cut points and swap the parents' portion between those cut points.
+    """
     points = sorted(sample(range(1, size), 2))
     point1 = points[0]
     point2 = points[1]
@@ -22,7 +28,11 @@ def two_point_crossover(chromosome1, chromosome2, size):
     return child1, child2
 
 
-def multi_point_crossover(chromosome1, chromosome2, size):
+def multi_point_crossover(chromosome1: list[int], chromosome2: list[int], size: int) -> tuple[list[int], list[int]]:
+    """
+    Choose n random cut points, where n is also a random number. It alternates between swapping the parents' portion
+    between the points, or leave it as it is.
+    """
     num_of_points = randint(1, size-2)
     points = sorted(sample(range(1, size), num_of_points))
     # print(f"Number of points = {num_of_points}, Points = {points}")
@@ -36,7 +46,13 @@ def multi_point_crossover(chromosome1, chromosome2, size):
     return child1, child2
 
 
-def uniform_crossover(chromosome1, chromosome2, size):
+def uniform_crossover(chromosome1: list[int], chromosome2: list[int], size: int) -> tuple[list[int], list[int]]:
+    """
+    Genrate a mask of 0s and 1s, and use it to know if we should swap genes or not. If the mask ith gene is 0,
+    the ith gene in child 1 will be the ith gene in parent 2 and vice versa for child 2. If the mask ith gene
+    is 1, the ith gene in child 1 will be the ith gene in parent 1 and the ith gene in child 2 will be the
+    ith gene in parent 2.
+    """
     mask = choices([0, 1], k=size)
     # print(f"Mask = {mask}")
     child1 = chromosome1.copy()
@@ -50,7 +66,14 @@ def uniform_crossover(chromosome1, chromosome2, size):
     return child1, child2
 
 
-def uniform_crossover_probability(chromosome1, chromosome2, size, crossover_probability):
+def uniform_crossover_probability(chromosome1: list[int], chromosome2: list[int], size: int, crossover_probability: float) -> tuple[list[int], list[int]]:
+    """
+    It uses a probability to know if we should swap genes or not. We generate a random number between 0 and 1
+    for each gene, and if it's less than crossover probability, the ith gene in child 1 will be the ith gene
+    in parent 2 and vice versa for child 2. If the random number is bigger than crossover probability, the
+    ith gene in child 1 will be the ith gene in parent 1 and the ith gene in child 2 will be the ith gene
+    in parent 2.
+    """
     child1 = chromosome1.copy()
     child2 = chromosome2.copy()
     
@@ -62,7 +85,13 @@ def uniform_crossover_probability(chromosome1, chromosome2, size, crossover_prob
     return child1, child2
 
 
-def three_parent_crossover(chromosome1, chromosome2, size):
+def three_parent_crossover(chromosome1: list[int], chromosome2: list[int], size: int) -> list[int]:
+    """
+    Generate a third chromosome with the same size and values range. If the ith gene in parent 1 equals the
+    the ith gene in parent 2, the ith gene in the child will be the same as the parents. If the ith gene in
+    parent 1 doesn't equal the the ith gene in parent 2, the ith gene in the child will be the ith gene in
+    the temporary chromosome.
+    """
     temp = choices([0, 1], k=size)
     # print(f"Temp chromosome = {temp}")
     child = []
@@ -75,7 +104,14 @@ def three_parent_crossover(chromosome1, chromosome2, size):
     return child
 
 
-def three_parent_crossover_dicimal(chromosome1, chromosome2, size):
+# Note: This method is used for decimal numbers!!!
+def three_parent_crossover_dicimal(chromosome1: list[int], chromosome2: list[int], size: int) -> list[int]:
+    """
+    Generate a third chromosome with the same size and values range. If the ith gene in parent 1 equals the
+    the ith gene in parent 2, the ith gene in the child will be the same as the parents. If the ith gene in
+    parent 1 doesn't equal the the ith gene in parent 2, the ith gene in the child will be the ith gene in
+    the temporary chromosome.
+    """
     temp = choices(range(1, size), k=size)
     # print(f"Temp chromosome = {temp}")
     child = []

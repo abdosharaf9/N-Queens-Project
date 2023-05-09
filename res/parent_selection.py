@@ -1,6 +1,10 @@
 from random import *
 
-def roulette_wheel_selection(population, fitness_values, population_size):
+def roulette_wheel_selection(population: list[int], fitness_values: list[int], population_size: int) -> list[int]:
+    """
+    Roulette Wheel is a Parent Selection technique. The chromosome is selected according to its fitness probability.
+    The wheel position is generated as a random number between 0 and 1, because we are dealing with probabilities.
+    """
     fitness_sum = sum(fitness_values)
     fitness_probs = [(fitness / fitness_sum) for fitness in fitness_values]
     wheel_position = uniform(0, 1)

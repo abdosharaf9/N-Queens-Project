@@ -3,12 +3,25 @@ from .parent_selection import *
 from .crossovers import *
 from .mutations import *
 
-def generate_chromosome(size):
+def generate_chromosome(size: int):
+    """
+    Generates new random chromosome using sample() function from random library.
+    """
     return sample(range(1, size+1), size)
 
 
 
-def generate_population(population_size, chromosome_size, mutation_probability, old_population, fitness_values):
+def generate_population(population_size: int, chromosome_size: int, mutation_probability: float, old_population: list[list[int]], fitness_values: list[list[int]]) -> list[list[int]]:
+    """
+Generate new population using the old one and its fitness values. It iterates until the new population
+reaches the desired population size, But here it only iterates the half because in each iteration we
+produce two new childs. Steps of generating new childs are as following:
+1. Select the parents using Roulette Wheel Selection method.
+2. Make crossover between these parents using Two-Point Crossover.
+3. For each child generate a random number between 0 and 1 to know if we should mutate it or not.
+4. If the mutation will happen we use the Random Reset Mutation.
+5. Add these childs to the new popultaion.
+    """
     new_population = []
     
     for _ in range(int(population_size/2)):
